@@ -15,6 +15,12 @@ class CreateTodo extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.addTodo(this.state)
+
+    // reset the component's state each time the submit button is clicked
+    // this causes the page to rerender and update the value attribute of the input field, clearing out the contents
+    this.setState({ 
+      text: "",
+    })
   }
   
   render() {
